@@ -44,7 +44,7 @@ const Head = ({ children, meta, url }) => {
 
 Head.defaultProps = {
   meta: {
-    title: `Gatsby Starer Prismic`,
+    title: `Gatsby Starter Prismic`,
     description: `Basic start for Gatsby + Prismic`,
   },
   url: `http://localhost:8000/`,

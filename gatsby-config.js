@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Prismic Starter`,
     description: `Build new website based on Gatsby and Prismic.`,
-    author: `@netkachev`,
+    author: `@m.netkachev`,
     siteUrl: `https://theview.ie`,
   },
   plugins: [
