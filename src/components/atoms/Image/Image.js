@@ -3,8 +3,8 @@ import GatsbyImage from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 const Image = ({ image, ...properties }) => {
-  const fluid = image?.fluid;
-  const fixed = image?.fixed;
+  const fluid = image?.childImageSharp?.fluid;
+  const fixed = image?.childImageSharp?.fixed;
 
   if (fluid) {
     return <GatsbyImage fluid={fluid} loading="lazy" {...properties} />;
