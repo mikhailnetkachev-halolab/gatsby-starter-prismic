@@ -1,21 +1,18 @@
 import React from 'react';
 
 // TODO: delete ->
-import Image from '@atoms/Image';
 import loadable from '@loadable/component';
 import { graphql } from 'gatsby';
+// <- end.
 
 import Layout from '@templates/Layout';
 const Component = loadable(() => import(`@organisms/Component`));
 
-const Page = (props) => {
-  console.log(props);
-
+const Page = () => {
   return (
     <Layout>
       <div>Home page</div>
       <Component />
-      <Image image={props.data.image} />
     </Layout>
   );
 };
