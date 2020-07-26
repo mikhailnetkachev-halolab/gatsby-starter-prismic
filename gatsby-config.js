@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const PRISMIC_PREVIEW_STATUS = process.env.PRISMIC_PREVIEW_STATUS === 'true';
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Prismic Starter`,
@@ -91,6 +93,28 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-source-prismic-graphql',
+      options: {
+        repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        previews: PRISMIC_PREVIEW_STATUS,
+        omitPrismicScript: !PRISMIC_PREVIEW_STATUS,
+        path: '/preview',
+        pages: [
+          {
+            type: 'Post',
+            match: '/blog/:uid',
+            path: '/blog-preview',
+            component: require.resolve('./src/templates/Post'),
+          },
+        ],
+        sharpKeys: [
+          /image|photo|picture|illustration|screenshot|background/,
+          'profilepic',
+        ],
       },
     },
   ],

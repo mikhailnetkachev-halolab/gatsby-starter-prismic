@@ -1,6 +1,8 @@
-import Banner from '@organisms/Banner';
-import Blockquote from '@organisms/Blockquote';
-import ContactUs from '@organisms/ContactUs';
+import loadable from '@loadable/component';
+
+const Banner = loadable(() => import(`@organisms/Banner`));
+const Blockquote = loadable(() => import(`@organisms/Blockquote`));
+const ContactUs = loadable(() => import(`@organisms/ContactUs`));
 
 const components = {
   ['banner']: Banner,
